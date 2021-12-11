@@ -13,7 +13,7 @@ namespace BalancedCashRegister
         Invalid
     }
 
-    public struct US_Currency
+    public class US_Currency
     {
         public const Country COUNTRY = Country.United_States;
         public const String CURRENCY = "US Dollar";
@@ -28,8 +28,24 @@ namespace BalancedCashRegister
         // coins
         public const double QUARTER = 0.25;
         public const double DIME    = 0.10;
-        public const double NICKLE  = 0.05;
+        public const double NICKEL  = 0.05;
         public const double PENNY   = 0.01;
+        
+        // bills quantity
+        public int oneQuantity     { get; set; }
+        public int twoQuantity     { get; set; }
+        public int fiveQuantity    { get; set; }
+        public int tenQuantity     { get; set; }
+        public int twentyQuantity  { get; set; }
+        public int fiftyQuantity   { get; set; }
+        public int hundredQuantity { get; set; }
+        // coins quantities
+        public int quarterQuantity { get; set; }
+        public int dimeQuantity    { get; set; }
+        public int nickelQuantity  { get; set; }
+        public int pennyQuantity   { get; set; }
+
+
     }
 
     public struct Canada_Currency
@@ -47,7 +63,7 @@ namespace BalancedCashRegister
         public const double LOONIE  = 1.00;
         public const double QUARTER = 0.25;
         public const double DIME    = 0.10;
-        public const double NICKLE  = 0.05;
+        public const double NICKEL  = 0.05;
         public const double PENNY   = 0.01;
     }
 
@@ -69,6 +85,9 @@ namespace BalancedCashRegister
             {
                 case Country.United_States:
                     output = US_Currency.CURRENCY;
+                    US_Currency us = new US_Currency();
+                    output += "\r\n";
+                    output += ++us.oneQuantity; 
                     break;
                 case Country.Canada:
                     output = Canada_Currency.CURRENCY;
@@ -77,5 +96,10 @@ namespace BalancedCashRegister
 
             return output;
         }
+    }
+
+    class Sales
+    {
+            x
     }
 }
