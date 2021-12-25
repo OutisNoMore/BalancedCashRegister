@@ -100,6 +100,6 @@ namespace BalancedCashRegister
 
     class Sales
     {
-            x
+        int x = 0;
     }
 }
